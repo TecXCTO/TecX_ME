@@ -112,3 +112,30 @@ If you execute academic work using this machine architecture, please credit the 
 ```text
 Click the "Cite this repository" drop-down menu on GitHub to export the BibTeX format derived from our CITATION.cff parameters.
 ```
+
+# Hi, I'm Rahul Saini 👋
+**Mechanical & Additive Manufacturing Research Engineer**
+
+I specialize in open-hardware development, automated data analysis, and industrial embedded control systems.
+
+## 🚀 Featured Project: Open Metal 3D Printing System (SLS/DED)
+I designed and built an open-architecture industrial metal additive manufacturing platform targeting **316L Stainless Steel** research. 
+
+*   **Firmware Loop**: Handles real-time embedded monitoring of oxygen concentrations (`<0.1% O2`) with automated laser interlocks.
+*   **Data Pipeline**: Built an automated Python analytics framework to clean and plot melt-pool thermal track profiles.
+*   **DevOps/CI**: Integrated GitHub Actions to verify processing logic and physical boundary conditions automatically on every commit.
+
+👉 **[Explore the Metal 3D Printer Repository Here](https://github.com)**
+
+---
+
+### 🛠️ Core Engineering Toolkit
+- **Hardware/CAD**: SolidWorks, Fusion 360, KiCad, Altium
+- **Languages/Computing**: Python (Pandas, NumPy, Matplotlib), MATLAB, C++/Arduino
+- **Simulation**: ANSYS FEA, COMSOL Multiphysics
+- **Manufacturing**: CNC Machining, Laser Optics Arrays, Inert Gas Weldments
+
+### 📬 Let's Connect!
+- **LinkedIn**: [://linkedin.com](https://://linkedin.com)
+- **Academic Portfolio / Google Scholar**: [Link to your research profile]
+- 
