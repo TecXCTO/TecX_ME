@@ -1,1 +1,51 @@
 # Automated code testing / documentation build
+
+
+name: Metal 3D Printer Code & Data CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  verify-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Clone the repository files onto the GitHub runner environment
+    - name: Checkout Repository Components
+      uses: actions/checkout@v4
+
+    # Step 2: Provision an isolated Python runtime instance
+    - name: Set up Python 3.11 Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+        cache: 'pip' # Automatically caches dependencies to speed up future test runs
+
+    # Step 3: Clean and deploy the analytical code library requirements
+    - name: Install Analytical Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    # Step 4: Force execution of data pipeline to verify sample rendering logic
+    - name: Execute Analytical Data Engine Test
+      run: |
+        python -m src.analysis.thermal_pipeline
+
+    # Step 5: Execute Python automated unit tests inside the test suite folder
+    - name: Run Pipeline Validation Unit Tests
+      run: |
+        python -m unittest discover -s tests -p "test_*.py"
+
+    # Step 6: Securely store generated thermal validation graphics as artifacts
+    - name: Upload Generated Performance Plots
+      uses: actions/upload-artifact@v4
+      with:
+        name: physical-thermal-validation-plot
+        path: assets/diagrams/thermal_profile.png
+        retention-days: 7
+        
