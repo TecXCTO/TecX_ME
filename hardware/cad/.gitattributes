@@ -1,0 +1,12 @@
+# Force native CAD extensions to use Git LFS
+*.SLDPRT filter=lfs diff=lfs merge=lfs -text
+*.SLDASM filter=lfs diff=lfs merge=lfs -text
+*.IGES   filter=lfs diff=lfs merge=lfs -text
+*.iges   filter=lfs diff=lfs merge=lfs -text
+*.igs    filter=lfs diff=lfs merge=lfs -text
+*.parasolid filter=lfs diff=lfs merge=lfs -text
+
+# Enable online 3D visual previewing on GitHub for open file shares
+*.stl    filter=lfs diff=lfs merge=lfs -text
+*.step   filter=lfs diff=lfs merge=lfs -text
+*.STEP   filter=lfs diff=lfs merge=lfs -text
