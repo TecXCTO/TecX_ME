@@ -1,6 +1,6 @@
 # TecX_ME
 Technology Engineering Computation Expansion in Mechanical Engineering
-"""
+'''
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   │   ├── bug_report.md          # For software/hardware bugs
@@ -34,7 +34,4 @@ Technology Engineering Computation Expansion in Mechanical Engineering
 ├── LICENSE                        # Open-source license (e.g., MIT or CC-BY-4.0)
 ├── README.md                      # Main landing page and project overview
 └── requirements.txt               # Software dependencies (Python packages, etc.)
-
-
-
-"""
+'''
