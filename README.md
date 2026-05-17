@@ -50,3 +50,65 @@ Installation & Usage: Step-by-step commands to run code or assemble parts.
 Research & Results: Graphs, data plots, and validation metrics matching your engineering goals.
 
 Future Scope: Next steps for design optimization or manufacturing.
+
+
+# OpenSource Metal 3D Printing System (SLS/DED)
+
+[![Hardware Validation](https://shields.io)](#hardware)
+[![License](https://shields.io)](LICENSE)
+
+An open-hardware, high-precision industrial metal additive manufacturing platform designed for **316L Stainless Steel** and **Ti-6Al-4V** research. This workspace contains the complete firmware, processing analysis codes, and raw manufacturing telemetry data models.
+
+## 📐 System Architecture
+The machine coordinates an ultra-high purity inert gas chamber control array alongside high-speed mirror galvanometer laser projection systems.
+
+```text
++-------------------------------------------------------------+
+
+|                     Host Workstation (GUI)                 |
++------------------------------+------------------------------+
+
+                               | G-Code
+                               v
++------------------------------+------------------------------+
+|             Central Embedded Control MCU (src/control/)     |
++-------+----------------------+-----------------------+------+
+
+        |                                              |
+        v Gas Interlock                                v Optic Trigger
++-------+----------------------+               +-------+------+
+
+| Argon Purge System (<0.1% O2)|               | 200W Fiber   |
+| (data/raw/ telemetry logs)   |               | Ytterbium    |
++------------------------------+               | Laser Source |
+                                               +-------+------+
+
+                                                       | Sintering
+                                                       v
+                                               +-------+------+
+                                               | Powder Bed   |
+                                               +--------------+
+```
+
+## 🚀 Installation & Usage Guide
+
+### 1. Software Dependency Installation
+Install the analytical Python toolkit environment:
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Execute Post-Processing Telemetry Run
+Process raw sensor runs from the build chamber to check validation constraints:
+```bash
+python -m src.analysis.thermal_pipeline
+```
+
+## 📊 Research Results
+The script extracts high-fidelity telemetry profiles matching the melt track. The pipeline outputs data figures mapping layer heat generation states directly to `/assets/diagrams/thermal_profile.png` for review.
+
+## 🤝 Citation Requirements
+If you execute academic work using this machine architecture, please credit the platform database using:
+```text
+Click the "Cite this repository" drop-down menu on GitHub to export the BibTeX format derived from our CITATION.cff parameters.
+```
